@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import React, { useEffect } from 'react';
 import imageConfetti from './assets/imageConfetti.jpg'
 import imageCurrency from './assets/imageCurrency.jpg'
 import imagePlane from './assets/imagePlane.jpg'
+import imageRestaurant from './assets/imageRestaurant.jpg'
 import iconApi from './assets/iconApi.svg'
 import iconBudgeting from './assets/iconBudgeting.svg'
 import iconOnline from './assets/iconOnline.svg'
@@ -10,18 +12,25 @@ import iconClose from './assets/iconClose.svg'
 import iconOpen from './assets/iconOpen.svg'
 import bgDesktop from './assets/bgDesktop.svg'
 import logo from './assets/logo.svg'
+import logoFooter from './assets/logoFooter.svg'
+import iconInstagram from './assets/iconInstagram.svg'
+import iconTwitter from './assets/iconTwitter.svg'
+import iconYoutube from './assets/iconYoutube.svg'
+import iconPinterest from './assets/iconPinterest.svg'
+import iconFacebook from './assets/iconFacebook.svg'
+
 import './App.css'
 
 
-const heros = [
-  {title: 'Next generation digital banking'},
- { paragraph: 'Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more'}
-]
+// const heros = [
+//   {title: 'Next generation digital banking'},
+//  { paragraph: 'Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more'}
+// ]
 
-const featre = {
-  header: 'Why choose Easybank?',
-  paragraph: 'We leverage open banking to turn your bank account into your financial hub. Control your finances like never before.'
-}
+// const featre = {
+//   header: 'Why choose Easybank?',
+//   paragraph: 'We leverage open banking to turn your bank account into your financial hub. Control your finances like never before.'
+// }
 
 const features = [
   {
@@ -53,7 +62,7 @@ const features = [
   },
 ]
 
-const blog = [ 
+const blogs = [ 
   {
     id: 1,
     image: imageCurrency,
@@ -63,7 +72,7 @@ const blog = [
   },
   {
     id: 1,
-    // image: imageRestaurant,
+    image: imageRestaurant,
     title: 'Treat yourself without worrying about money',
     author: 'Wilson Hutton',
     article: 'Our simple budgeting feature allows you to separate out your spending and set realistic limits each months. That means you ...'
@@ -99,6 +108,8 @@ export default function App () {
       <Nav navs={navs}/>
       <Hero/>
       <Section features={features}/>
+      <Article blogs={blogs}/>
+      <Footer/>
     </div>
   )
 }
@@ -159,19 +170,97 @@ function Hero () {
 function Section ({features}) {
   return (
     <section>
-      <div>
-        <h1>Why choose Easybank</h1>
+      <div className='section'>
+      <div className='features-content'>
+        <h1>Why choose Easybank?</h1>
         <p>We leverage open banking to turn your bank account into your financial hub. Control your finances like never before.</p>
       </div>
-      <div>
+      <div className='features'>
         {features.map(feature => (
-          <div key={feature.id}>
-          <img>{feature.icon}</img>
+          <div key={feature.id} className='feature'>
+          <img src={feature.icon}></img>
           <h4>{feature.heading}</h4>
           <p>{feature.body}</p>
           </div>
         ))}
       </div>
+      </div>
     </section>
+  )
+}
+
+function Article ({blogs}) {
+    useEffect(() => {
+      const containers = document.querySelectorAll('.article');
+      let maxHeight = 100;
+  
+      // Find the maximum height among all containers
+      containers.forEach(container => {
+        maxHeight = Math.max(maxHeight, container.clientHeight);
+      });
+  
+      // Set the height of all containers to the maximum height
+      containers.forEach(container => {
+        container.style.height = maxHeight + '%';
+      });
+    }, []);
+  
+  return (
+    <article>
+      <div className='article-body'>
+      
+      <h1>Latest Articles</h1>
+    
+        <div className='articles'>
+    {blogs.map(blog=>(
+      <div key={blog.id} className='article'>
+        <img src={blog.image} className='article-img'></img>
+        <div className='article-content'>
+        <p>{blog.author}</p>
+        <h4>{blog.title}</h4>
+        <p>{blog.article}</p>
+        </div>
+      </div>
+    ))}
+    </div> 
+    </div>
+    </article>
+  )
+}
+
+function Footer ({children}) {
+  return (
+    <footer>
+      <div className='footer'>
+        <div className='footer-content'>
+          <div className='footer-social'>
+            <div><img src={logoFooter}></img></div>
+           <div>
+           <img src={iconFacebook} className='footer-img'></img>
+            <img src={iconYoutube} className='footer-img'></img>
+            <img src={iconTwitter} className='footer-img'></img>
+            <img src={iconPinterest} className='footer-img'></img>
+            <img src={iconInstagram} className='footer-img'></img>
+           </div>
+          </div>
+          <div className='footer-links'>
+            <ul>
+              <li>About</li>
+              <li>Contact</li>
+              <li>Blog</li>
+            </ul>
+            <ul>
+              <li>Careers</li>
+              <li>Support</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+        </div>
+        <div className='footer-cta'>
+        <div><Button>Request Invite</Button></div>
+        <p>&copy; Easybank. All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
   )
 }
