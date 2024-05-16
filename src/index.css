@@ -427,9 +427,9 @@ footer li:hover {
   nav button {
     display: none;
   }
+  
   .hamburger {
     position: relative;
-    display: inline-flex;
   }
 
   .body {
@@ -442,7 +442,7 @@ footer li:hover {
 
   header {
     margin-top: -170px;
-      margin-bottom: 300px;
+    margin-bottom: 300px;
   }
 
   section {
@@ -451,7 +451,7 @@ footer li:hover {
   }
 
   .bg-desktop {
-    width: 440px;
+    width: 530px;
     margin-left: -120px;
   }
 
