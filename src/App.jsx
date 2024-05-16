@@ -128,7 +128,7 @@ function Nav ({navs}) {
 return (
   <nav>
     <div className='nav'>
-    <diV><img src={logo} alt='logo'></img></diV>
+    <div><img src={logo} alt='logo' className='logo'></img></div>
     <div className='nav-bg'>
     <div className={navToggle ? 'nav-links' : 'nav-links-mobile'}> 
           { navs.map(nav => (
