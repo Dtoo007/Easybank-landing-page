@@ -7,9 +7,13 @@
   font-family: 'Public Sans', Courier, monospace;
 }
 
-body {
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   background:hsl(0, 0%, 100%);
 }
+
 
 
 /* Nav bar */
@@ -18,9 +22,8 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  min-width: 1440px;
   z-index: 1000; /* Ensure it's above other content */
-  width: 100%;
 }
 
 .nav {
@@ -33,7 +36,6 @@ nav {
   background: hsl(0, 0%, 100%);
   position: relative;
   width: 80%; 
-  max-width: 100%;
   margin: 0 auto; 
 }
 
@@ -94,7 +96,7 @@ button {
   position: absolute;
   align-items: center;
   justify-content: center;
-  display: block;
+  display: none;
 }
 
 
@@ -137,6 +139,7 @@ align-items: start;
 
 
 header {
+  min-width: 1440px;
   margin-top: -220px;
   margin-bottom: 64px;
   background-color: white;
@@ -147,16 +150,14 @@ header {
 
 section {
   background-color: hsl(220, 16%, 96%);
-  width: 100%;
+  min-width: 1440px;
   padding: 64px 0;
   margin-top: -200px;
 }
 
 .section {
   background-color: hsl(220, 16%, 96%);
-  margin-left: 10%; 
-  width: 80%; 
-  max-width: 100%;
+  width: 80%;
   margin: 0 auto; 
   display: flex;
   justify-content: center;
@@ -229,11 +230,11 @@ article {
   background-color: hsl(0, 0%, 98%);
   margin-top: -4px;
   padding: 120px 0px;
+  min-width: 1440px;
 }
 
 .article-body {
-  width: 80%; 
-  max-width: 100%;
+  max-width: 80%;
   margin: 0 auto; 
 }
 
@@ -267,6 +268,7 @@ article h1 {
 
 footer {
   background-color: hsl(233, 26%, 24%);
+  min-width: 1440px;
 }
 
 .footer {
@@ -276,7 +278,7 @@ footer {
   width: 80%; 
   max-width: 100%;
   margin: 0 auto; 
-  padding: 32px 0px;
+  padding: 64px 0px;
 }
 
 .footer-social {
@@ -346,23 +348,25 @@ footer li:hover {
     text-align: center;
   }
 
+
+
+
   .nav {
     display: flex;
     min-height: 68.8px;
     position: relative;
     flex-direction: row;
     justify-content: space-between;
-    min-width: 100%;
+    width: 100%;
   }
 
   nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    min-width: 100%;
     z-index: 1000; /* Ensure it's above other content */
-    width: 100%;
-    margin: 0; 
+    margin: 0 auto; 
   }
 
   
@@ -430,6 +434,7 @@ footer li:hover {
   
   .hamburger {
     position: relative;
+    display: inline-flex;
   }
 
   .body {
@@ -438,11 +443,13 @@ footer li:hover {
     align-items: center;
     background-color:  white;
     margin: 0 auto;
+    width: 100%;
   }
 
   header {
     margin-top: -170px;
     margin-bottom: 300px;
+    min-width: 100%;
   }
 
   section {
@@ -502,6 +509,13 @@ footer li:hover {
     width: 100%;
   }
 
+    section {
+      min-width: 100%;
+    }
+
+    .section {
+      width: 100%;
+    }
 
   .articles {
     display: flex;
@@ -510,12 +524,24 @@ footer li:hover {
     margin-top: 32px;
   }
 
+  article {
+    min-width: 100%;
+  }
+
+  .article-body {
+    width: 100%;
+  }
+
+  footer {
+    min-width: 100%;
+  }
+
   .footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 24px;
-    width: 80%; 
+    width: 100%; 
     max-width: 100%;
     margin: 0 auto; 
     /* padding: 32px 0px; */
