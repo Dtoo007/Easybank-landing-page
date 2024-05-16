@@ -235,7 +235,7 @@ function Footer ({children}) {
         <div className='footer-content'>
           <div className='footer-social'>
             <div><img src={logoFooter}></img></div>
-           <div>
+           <div className='footer-icons'>
            <img src={iconFacebook} className='footer-img'></img>
             <img src={iconYoutube} className='footer-img'></img>
             <img src={iconTwitter} className='footer-img'></img>
@@ -245,7 +245,7 @@ function Footer ({children}) {
           </div>
           <div className='footer-links'>
             <ul>
-              <li>About</li>
+              <li>About Us</li>
               <li>Contact</li>
               <li>Blog</li>
             </ul>

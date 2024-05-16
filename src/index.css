@@ -11,7 +11,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  background:hsl(0, 0%, 100%);
+  background:hsl(0, 88%, 47%);
 }
 
 
@@ -285,6 +285,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 18px;
 }
 .footer-content {
   display: flex;
@@ -322,8 +323,12 @@ footer li:hover {
   cursor: pointer;
 }
 .footer-img {
-  padding: 16px 16px 0px 0px;
-  cursor: pointer;
+  display: inline-flex;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 18px;
 }
 
 .footer-cta {
@@ -349,8 +354,6 @@ footer li:hover {
   }
 
 
-
-
   .nav {
     display: flex;
     min-height: 68.8px;
@@ -368,6 +371,7 @@ footer li:hover {
     z-index: 1000; /* Ensure it's above other content */
     margin: 0 auto; 
   }
+
 
   
     nav ul:hover {
@@ -454,11 +458,16 @@ footer li:hover {
 
   section {
     background-color: hsl(220, 16%, 96%);
+    min-width: 100%;
+    margin: auto;
+  }
+
+  .section {
     width: 100%;
   }
 
   .bg-desktop {
-    width: 530px;
+    width: 100%;
     margin-left: -120px;
   }
 
@@ -508,14 +517,7 @@ footer li:hover {
   .features-content {
     width: 100%;
   }
-
-    section {
-      min-width: 100%;
-    }
-
-    .section {
-      width: 100%;
-    }
+ 
 
   .articles {
     display: flex;
@@ -550,7 +552,8 @@ footer li:hover {
   .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .footer-content {
@@ -559,9 +562,12 @@ footer li:hover {
   gap: 24px;
 }
 
+
+
 .footer, li {
   background-color:rgba(255, 255, 255, 0);
 }
+
 
 .footer-cta {
   display: flex;
